@@ -1,3 +1,12 @@
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
+
 const Footer = () => {
     return (
         <div className="footer">
@@ -16,11 +25,37 @@ const Footer = () => {
                     <a href="#top">Contact us</a>
                 </div>
                 <div className="newsletter">
-                    <form>
+                    {/* <form>
                         <label for="newsletteremail">Newsletter</label>
                         <input type="text" id="newsletteremail" name="newsletter" placeholder="Enter your email"></input>
                         <button className="newsletter-button">send</button>
-                    </form>
+                    </form> */}
+                    <Typography sx={{ fontSize: 20}} color="text.secondary" gutterBottom>
+                        Newsletter
+                    </Typography>
+                    <Box 
+                        component="form"
+                        sx={{
+                            '& > :not(style)': { m: 1, width: '25ch' },
+                        }}
+                        noValidate
+                        autoComplete='off'
+                    >
+                        <TextField 
+                            id="standard-basic" 
+                            label="ENTER YOUR EMAIL" 
+                            variant="standard" 
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <IconButton edge="end" color="primary">
+                                            <ArrowForwardIosIcon />
+                                        </IconButton>
+                                    </InputAdornment>
+                                ),
+                            }}
+                            />
+                    </Box>
                 </div>
 
             </div>
